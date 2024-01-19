@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }
+        .wrap{
+            width:500px;
+            height:500px;
+            margin:auto;
+            border:1px #fff solid;
+            background-color: grey;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .img-target{
+            /* width:500px;
+            height:500px; */
+            object-fit: contain;
+            position:absolute;
+        }
+        .img-target:hover{
+            cursor:move
+        }
+        .img-selector{
+            pointer-events: none;
+            position:relative;
+            z-index:3;
+            border-radius: 50%;
+            width:100px;
+            height:100px;
+            border:3px #fff solid;
+            box-shadow: #000000be 0px 0px 0px 2000px;
+        }
+        .preview{
+            display: flex;
+            justify-content: center;
+            margin-top:20px;
+        }
+        canvas{
+            background-color: antiquewhite;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img draggable="false" id="imgTarget" class="img-target" src="img/basic-scene.png" alt="">
+        <div class="img-selector"> </div>
+    </div>
+    <div class="preview">
+        <canvas id="preview-canvas"></canvas>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
